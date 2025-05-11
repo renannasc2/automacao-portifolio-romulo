@@ -45,18 +45,50 @@ npm run test:report
 
 ```
 src/
-  └── tests/
-      └── portfolio.spec.ts    # Testes do site de portfólio
+├── elements/
+│   └── portfolio.elements.ts    # Seletores dos elementos
+├── pages/
+│   ├── PortfolioPage.ts        # Métodos da página principal
+│   └── ContactPage.ts          # Métodos da página de contato
+└── tests/
+    └── portfolio.spec.ts       # Testes usando Page Objects
 ```
+
+## Testes Implementados
+
+### Navegação
+- Verificação de navegação para Projetos
+- Verificação de navegação para Contato
+- Verificação de navegação para Sobre
+
+### Links
+- Verificação de links do menu
+- Verificação de links do rodapé
+
+### Funcionalidades
+- Teste de download do CV
+- Teste de envio do formulário de contato
 
 ## Configuração
 
 O arquivo `playwright.config.ts` contém as configurações dos testes, incluindo:
 - Timeouts
-- Navegadores suportados
+- Navegadores suportados (Chrome, Firefox, Safari)
 - Configurações de relatório
 - Configurações de screenshot e vídeo
+- Execução em paralelo
 
 ## Relatórios
 
-Os relatórios são gerados automaticamente após a execução dos testes e podem ser visualizados com o comando `npm run test:report`. 
+Os relatórios são gerados automaticamente após a execução dos testes e podem ser visualizados com o comando `npm run test:report`. Os relatórios incluem:
+- Status dos testes
+- Screenshots em caso de falha
+- Vídeos em caso de falha
+- Tempo de execução
+- Detalhes dos erros
+
+## Tecnologias Utilizadas
+
+- Playwright
+- TypeScript
+- Page Objects Pattern 
